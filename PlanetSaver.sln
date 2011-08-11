@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetSaver", "PlanetSaver\PlanetSaver\PlanetSaver.csproj", "{9209B3DE-730F-49D4-BD00-51D367ED916B}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "PlanetSaverContent", "PlanetSaver\PlanetSaverContent\PlanetSaverContent.contentproj", "{41D26CC8-D3F6-4F94-96D4-3EF3F54B1B22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9209B3DE-730F-49D4-BD00-51D367ED916B}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{9209B3DE-730F-49D4-BD00-51D367ED916B}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{9209B3DE-730F-49D4-BD00-51D367ED916B}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{9209B3DE-730F-49D4-BD00-51D367ED916B}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{9209B3DE-730F-49D4-BD00-51D367ED916B}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{9209B3DE-730F-49D4-BD00-51D367ED916B}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{41D26CC8-D3F6-4F94-96D4-3EF3F54B1B22}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{41D26CC8-D3F6-4F94-96D4-3EF3F54B1B22}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
