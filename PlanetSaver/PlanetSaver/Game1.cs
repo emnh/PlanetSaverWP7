@@ -106,7 +106,7 @@ namespace PlanetSaver
                         {
                             factor *= GameConfig.ComputeRandomSubsetSize;
                         }
-                        factor *= p2.Mass;
+                        factor *= p2.Mass / p1.Mass;
                         newX += factor * xDelta;
                         newY += factor * yDelta;
                     }
@@ -174,8 +174,10 @@ namespace PlanetSaver
 
         public Color Color { get; set; }
 
-        public double Mass { 
-            get { return GameConfig.UseWidthAsMass ? Width/(double) GameConfig.MaxWidth : 1; }
+        public double Mass
+        {
+            get;
+            set;
         }
 
         private double _xVelocity;
@@ -208,6 +210,7 @@ namespace PlanetSaver
             Y = 0;
             XVelocity = 0;
             YVelocity = 0;
+            Mass = GameConfig.UseWidthAsMass ? Width / (double)GameConfig.MaxWidth : 1;
             drawBall(rnd, Texture, width, height);
         }
         
@@ -275,7 +278,7 @@ namespace PlanetSaver
             // Frame rate is 30 fps by default for Windows Phone.
             TargetElapsedTime = TimeSpan.FromTicks(333333);
 
-            TouchPanel.EnabledGestures = GestureType.Tap;
+            TouchPanel.EnabledGestures = GestureType.FreeDrag; // | GestureType.Tap;
         }
 
         /// <summary>
@@ -337,6 +340,16 @@ namespace PlanetSaver
                         planet.X = gs.Position.X + _rnd.Next(-100,100);
                         planet.Y = gs.Position.Y + _rnd.Next(-100,100);
                     }
+                }
+
+                if (gs.GestureType == GestureType.FreeDrag)
+                {
+                    planets[0].X = gs.Position.X - planets[0].Width / 2;
+                    planets[0].Y = gs.Position.Y - planets[0].Height / 2;
+                    planets[0].XVelocity = 0;
+                    planets[0].YVelocity = 0;
+                    planets[0].Mass = 50; //(gameTime.TotalGameTime.Milliseconds - gs.Timestamp.Milliseconds);
+                    //planets[0].X
                 }
             }
 
